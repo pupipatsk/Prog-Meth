@@ -15,13 +15,13 @@ public class Egg extends Ingredient
 	public void setCookedPercentage(int cookedPercentage) {
 		this.cookedPercentage = cookedPercentage;
 	}
-	public int getcookedPercentage() {
+	public int getCookedPercentage() {
 		return this.cookedPercentage;
 	}
 	public void cook() {
-		setCookedPercentage( this.getcookedPercentage() + 12 );
+		setCookedPercentage( this.getCookedPercentage() + 12 );
 		
-		int cp = this.getcookedPercentage();
+		int cp = this.getCookedPercentage();
 		if (0<cp && cp<=50) {
 			setName("Raw Egg");
 			setEdible(false);
@@ -40,12 +40,12 @@ public class Egg extends Ingredient
 		}
 	}
 	public boolean isBurnt() {
-		if (this.getcookedPercentage()>100) {
+		if (this.getCookedPercentage()>100) {
 			return true;
 		}
 		return false;
 	}
 	public String toString() {
-		return logic.StringUtil.formatNamePercentage(this.getName(), this.getcookedPercentage()); 
+		return logic.StringUtil.formatNamePercentage(this.getName(), this.getCookedPercentage()); 
 	}
 }
