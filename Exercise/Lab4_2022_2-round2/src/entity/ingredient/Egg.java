@@ -12,12 +12,7 @@ public class Egg extends Ingredient
 		super("Egg");
 		setCookedPercentage(0);
 	}
-	public void setCookedPercentage(int cookedPercentage) {
-		this.cookedPercentage = cookedPercentage;
-	}
-	public int getCookedPercentage() {
-		return this.cookedPercentage;
-	}
+	
 	public void cook() {
 		setCookedPercentage( this.getCookedPercentage() + 12 );
 		
@@ -47,5 +42,12 @@ public class Egg extends Ingredient
 	}
 	public String toString() {
 		return logic.StringUtil.formatNamePercentage(this.getName(), this.getCookedPercentage()); 
+	}
+	// Getter & Setter
+	public int getCookedPercentage() {
+		return this.cookedPercentage;
+	}
+	public void setCookedPercentage(int cookedPercentage) {
+		this.cookedPercentage = cookedPercentage;
 	}
 }

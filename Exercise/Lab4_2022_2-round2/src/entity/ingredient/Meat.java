@@ -16,23 +16,12 @@ public class Meat extends Ingredient
 		setCookedPercentage(0);
 	}
 	
-	public void setChopState(boolean chopState) {
-		this.chopState = chopState;
-	}
-	public void setCookedPercentage(int cookedPercentage) {
-		this.cookedPercentage = cookedPercentage;
-	}
+	
 	public void chop() {
 		if (!(isChopped() || this.getCookedPercentage()!=0)) {
 			setChopState(true);
 			setName("Minced Meat");
 		}
-	}
-	public int getCookedPercentage() {
-		return cookedPercentage;
-	}
-	public boolean isChopped() {
-		return chopState;
 	}
 	public void cook() {
 		if (!isChopped()) {
@@ -82,5 +71,18 @@ public class Meat extends Ingredient
 	}
 	public String toString() {
 		return logic.StringUtil.formatNamePercentage(this.getName(), this.getCookedPercentage());
+	}
+	// Getter & Setter
+	public boolean isChopped() {
+		return chopState;
+	}
+	public void setChopState(boolean chopState) {
+		this.chopState = chopState;
+	}
+	public int getCookedPercentage() {
+		return cookedPercentage;
+	}
+	public void setCookedPercentage(int cookedPercentage) {
+		this.cookedPercentage = cookedPercentage;
 	}
 }

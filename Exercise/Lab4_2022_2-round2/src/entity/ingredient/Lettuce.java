@@ -20,6 +20,7 @@ public class Lettuce extends Ingredient
 			setName("Chopped Lettuce");
 		}
 	}
+	// Getter & Setter
 	public boolean isChopped() {
 		return chopState;
 	}
