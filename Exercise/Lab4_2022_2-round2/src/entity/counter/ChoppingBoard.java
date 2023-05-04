@@ -14,10 +14,10 @@ public class ChoppingBoard extends Counter{
 			super.interact(p);
 		}
 		else if (p.getHoldingItem() instanceof Ingredient) {
-			super.interact(p);
 			if (p.getHoldingItem() instanceof Choppable) {
 				((Choppable) p.getHoldingItem()) .chop();
 			}
+			super.interact(p);
 		}
 	}
 }

@@ -36,7 +36,7 @@ public class Meat extends Ingredient
 				setEdible(true);
 			}
 			else if (80<cp && cp<=100) {
-				setName("Well Done Stea");
+				setName("Well Done Steak");
 				setEdible(true);
 			}
 			else if (cp>100) {
@@ -50,7 +50,7 @@ public class Meat extends Ingredient
 			int cp = this.getCookedPercentage();
 			if (0<cp && cp<=80) {
 				setName("Raw Burger");
-				setEdible(true);
+				setEdible(false);
 			}
 			else if (80<cp && cp<=100) {
 				setName("Cooked Burger");
@@ -58,7 +58,7 @@ public class Meat extends Ingredient
 			}
 			else if (cp>100) {
 				setName("Burnt Burger");
-				setEdible(true);
+				setEdible(false);
 			}
 		}
 	}

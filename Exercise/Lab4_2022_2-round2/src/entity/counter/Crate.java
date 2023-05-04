@@ -8,7 +8,7 @@ public class Crate extends Counter{
 	private String myIngredient;
 	
 	public Crate(String s) {
-		super(s+"Crate");
+		super(s + " Crate");
 		this.setMyIngredient(s);
 	}
 	

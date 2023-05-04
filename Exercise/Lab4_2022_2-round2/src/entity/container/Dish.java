@@ -45,7 +45,7 @@ public class Dish extends Container{
 	}
 	public void setDirty(int dirty) {
 		if (dirty<0) {
-			this.dirty = 0;
+			dirty = 0;
 		}
 		this.dirty = dirty;
 		
