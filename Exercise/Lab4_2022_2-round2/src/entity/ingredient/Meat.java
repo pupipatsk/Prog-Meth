@@ -16,7 +16,6 @@ public class Meat extends Ingredient
 		setCookedPercentage(0);
 	}
 	
-	
 	public void chop() {
 		if (!(isChopped() || this.getCookedPercentage()!=0)) {
 			setChopState(true);
