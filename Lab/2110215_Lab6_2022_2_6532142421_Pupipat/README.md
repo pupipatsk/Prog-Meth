@@ -1,0 +1,1 @@
+# lab-6-2022-2-pupipatsk
