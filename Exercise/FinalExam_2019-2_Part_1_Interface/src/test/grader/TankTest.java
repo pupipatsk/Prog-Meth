@@ -1,16 +1,20 @@
 package test.grader;
 
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.ArrayList;
-import logic.GameManager;
-import fighters.*;
-import fighters.base.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import fighters.base.Attackable;
+import fighters.base.Guardable;
+import fighters.base.Unit;
 import fighters.derived.Guildmaster;
 import fighters.derived.Tank;
 import fighters.derived.Wizard;
+import logic.GameManager;
 
 public class TankTest {
 	
