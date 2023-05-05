@@ -15,7 +15,7 @@ public class NavigationPane extends VBox {
     private final ArrayList<PageButton> pageButtons = new ArrayList<>();
     private int currentPage;
 
-    // Constructors
+    // Constructor
     public NavigationPane() {
         this.setPrefWidth(80);
         this.setBackground(new Background(new BackgroundFill(Color.GRAY, null, null)));
