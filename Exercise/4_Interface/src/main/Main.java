@@ -1,25 +1,28 @@
 package main;
 import java.util.ArrayList;
 
-import model.*;
+import model.Bot;
+import model.MaterialProcessor;
+import model.Packager;
+import model.ProductAssembler;
+import model.QualityChecker;
+import model.Worker;
 
 public class Main {
 	
-	/*
-	 * Code here
-	 * */
-	workers;
+	public static ArrayList<Worker> workers;
 	
-	public static void trigger(Worker w){
-		/*
-		 * Code here
-		 * */
-	}
 	
 	public static void produce(){
-		/*
-		 * Code here
-		 * */
+		for (Worker e : workers) {
+			e.work();
+		}
+	}
+	
+	public static void trigger(Worker w){
+		if (w instanceof QualityChecker) {
+			((QualityChecker) w).increaseStress();
+		}
 	}
 
 	public static void main(String[] args) {
