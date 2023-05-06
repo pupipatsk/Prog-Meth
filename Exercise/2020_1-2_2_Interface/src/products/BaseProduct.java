@@ -2,7 +2,7 @@ package products;
 
 import discount.Sellable;
 
-public class BaseProduct{
+public class BaseProduct implements Sellable{
 	protected String productName;
 	protected int price;
 	
