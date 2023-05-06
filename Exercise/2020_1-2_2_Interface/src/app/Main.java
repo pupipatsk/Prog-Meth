@@ -1,11 +1,14 @@
 package app;
 
-import products.*;
-import logic.*;
-import discount.*;
-
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import discount.Sellable;
+import logic.Bill;
+import logic.BillItem;
+import products.BaseProduct;
+import products.FreeDiscountProduct;
+import products.PercentDiscountProduct;
 
 
 
@@ -214,6 +217,10 @@ public class Main {
 			//A1. Accept a string input with sc.nextLine()
 			//A2. Attempt to parse the string into an int (the try/catch will handle bad cases automatically)
 			//A3. Use the int from step A2 to get a Sellable object from the ArrayList called shop
+			Scanner scA = new Scanner(System.in);
+			String lineA = scA.nextLine();
+			int numA = Integer.parseInt(lineA);
+			Sellable obj = shop.get(numA);
 			
 			System.out.println("Please choose the quantity of the items you want to buy.");
 			
@@ -222,7 +229,12 @@ public class Main {
 			//B2. Attempt to parse the string into an int (the try/catch will handle bad cases automatically)
 			//B3. Use the Sellable from step A3 and the quantity from step B2 to initialize a new BillItem
 			//B4. Add the BillItem in step B3 to bill.itemsInBill
-			
+			Scanner scB = new Scanner(System.in);
+			String lineB = scB.nextLine();
+			int quantity = Integer.parseInt(lineB);
+
+			BillItem newBillItem = new BillItem(obj, quantity);
+			bill.itemsInBill.add(newBillItem);
 			//If you wrote this function correctly, then you should be able to correctly add items to your bill
 			
 			System.out.println(newBillItem + " added to the bill.");
