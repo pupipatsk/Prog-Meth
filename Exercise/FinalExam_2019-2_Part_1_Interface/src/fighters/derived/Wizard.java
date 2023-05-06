@@ -13,7 +13,11 @@ public class Wizard extends Unit implements Attackable{
 	}
 	
 	public int attack(Unit e) {
-		if (this.sameTeam(e) || logic.BattleUtils.validRange(this.getRange(), this.getLocation(), e.getLocation() )) {
+//		System.out.println(this.getRange());
+//		System.out.println(e.getRange());
+//		System.out.println( logic.BattleUtils.calculateDamage(this.getPower(), e) );
+//		System.out.println( logic.BattleUtils.calculateDamage(this.getPower(), this) );
+		if (this.sameTeam(e) || !logic.BattleUtils.validRange(this.getRange(), this.getLocation(), e.getLocation() )) {
 			return -1;
 		}
 		else {
