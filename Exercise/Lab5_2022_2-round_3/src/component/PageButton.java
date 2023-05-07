@@ -16,17 +16,18 @@ public class PageButton extends StackPane{
 	public PageButton(int pageNumber) {
 		Circle c = new Circle(25);
 		c.setFill(Color.LIGHTGRAY);
+		this.setCircle(c);
 		
 		Text t = new Text(Integer.toString(pageNumber));
 		t.setStyle("-fx-font-size:25;");
 		
-		this.setCircle(c);
 		this.setCursor(Cursor.HAND);
 		this.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			public void handle(MouseEvent event) {
 				RootPane.getNavigationPane().setCurrentPage(pageNumber);
 			}
 		});
+		this.getChildren().addAll(c, t);
 	}
 	
 	public void setActive(boolean value) {
