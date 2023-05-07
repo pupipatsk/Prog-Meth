@@ -29,7 +29,7 @@ public class NavigationPane extends VBox {
         // TODO: FILL CODE HERE
     	PageButton temp = new PageButton(pageButtons.size());
     	pageButtons.add(temp);
-    	RootPane.getNavigationPane().getChildren().add(pageButtons.size()-1, temp);
+    	RootPane.getNavigationPane().getChildren().add(RootPane.getNavigationPane().getChildren().size()-1, temp);
     	RootPane.getDisplayPane().addTodoList();
     	this.setCurrentPage(pageButtons.size()-1);
     }

@@ -27,8 +27,8 @@ public class DisplayPane extends VBox {
     public void setActiveTodoList(int index) {
         // TODO: FILL CODE HERE
     	if (0<=index && index<todoLists.size()) {
-    		RootPane.getDisplayPane().todoLists.clear();
-    		RootPane.getDisplayPane().todoLists.add(todoLists.get(index));
+    		RootPane.getDisplayPane().getChildren().clear();
+    		RootPane.getDisplayPane().getChildren().addAll(todoLists.get(index));
     	}
     }
 
