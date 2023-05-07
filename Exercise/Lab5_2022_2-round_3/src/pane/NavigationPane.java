@@ -1,5 +1,7 @@
 package pane;
 
+import java.util.ArrayList;
+
 import component.CreatePageButton;
 import component.PageButton;
 import javafx.geometry.Insets;
@@ -8,9 +10,8 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
-import java.util.ArrayList;
-
 public class NavigationPane extends VBox {
+	
     private final ArrayList<PageButton> pageButtons = new ArrayList<>();
     private int currentPage;
 
@@ -26,13 +27,23 @@ public class NavigationPane extends VBox {
 
     public void addPage() {
         // TODO: FILL CODE HERE
+    	PageButton temp = new PageButton(pageButtons.size());
+    	pageButtons.add(temp);
+    	RootPane.getNavigationPane().getChildren().add(pageButtons.size()-1, temp);
+    	RootPane.getDisplayPane().addTodoList();
+    	this.setCurrentPage(pageButtons.size()-1);
     }
-
     public int getCurrentPage() {
         // TODO: FILL CODE HERE
+    	return this.currentPage;
     }
-
     public void setCurrentPage(int pageNumber) {
         // TODO: FILL CODE HERE
+    	if (0<=pageNumber && pageNumber<pageButtons.size()) {
+    		pageButtons.get(this.getCurrentPage()).setActive(false);
+    		currentPage = pageNumber;
+    		pageButtons.get(this.getCurrentPage()).setActive(true);
+    		RootPane.getDisplayPane().setActiveTodoList(pageNumber);
+    	}
     }
 }
